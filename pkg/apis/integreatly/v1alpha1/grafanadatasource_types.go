@@ -2,8 +2,9 @@ package v1alpha1
 
 import (
 	"fmt"
-	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"strings"
+
+	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
 const GrafanaDataSourceKind = "GrafanaDataSource"
@@ -120,6 +121,10 @@ type GrafanaDataSourceJsonData struct {
 	ClientEmail        string `json:"clientEmail,omitempty"`
 	AuthenticationType string `json:"authenticationType,omitempty"`
 	DefaultProject     string `json:"defaultProject,omitempty"`
+	// Prometheus datasource fields
+	QueryTimeout          string `json:"queryTimeout,omitempty"`
+	CustomQueryParameters string `json:"customQueryParameters,omitempty"`
+	DisableMetricsLookup  string `json:"disableMetricsLookup,omitempty"`
 }
 
 // The most common secure json options
